@@ -16,9 +16,9 @@ public class Communicator {
 	public Communicator() {
 		this.sent = false;
 		this.lock = new Lock();
-		this.speaker = new Condition(lock);
-		this.listener = new Condition(lock);
-		this.transmit = new Condition(lock);
+		this.speaker = new Condition2(lock);
+		this.listener = new Condition2(lock);
+		this.transmit = new Condition2(lock);
 	}
 
 	/**
@@ -157,8 +157,8 @@ public class Communicator {
 	
 	private int message;
 	private boolean sent;
-	private Condition speaker;
-	private Condition listener;
-	private Condition transmit;
+	private Condition2 speaker;
+	private Condition2 listener;
+	private Condition2 transmit;
 	private Lock lock;
 }
